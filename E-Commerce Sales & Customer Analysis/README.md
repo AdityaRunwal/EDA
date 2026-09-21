@@ -14,6 +14,31 @@ This project is an Exploratory Data Analysis (EDA) of Brazilian e-commerce order
 ## Dataset
 The project utilizes the **Olist Brazilian E-Commerce Public Dataset** available on Kaggle.
 
+## 📊 Dataset
+
+This project uses the **Olist Brazilian E-Commerce Public Dataset**.
+
+The dataset contains information about:
+
+* Customers
+* Orders
+* Order Items
+* Products
+* Sellers
+* Payments
+* Reviews
+* Geolocation
+* Product Categories
+
+### Dataset Source
+
+The dataset was obtained from Kaggle:
+
+**Olist Brazilian E-Commerce Public Dataset**
+
+https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
+
 ## Datasets Used
 - `olist_orders_dataset.csv`: Main order timeline and status details.
 - `olist_customers_dataset.csv`: Customer locations (cities and states).
