@@ -1,22 +1,36 @@
-# E-Commerce Sales & Customer Analysis
+# 🛒 E-Commerce Sales & Customer Analysis
 
-## About the Project
-This project is an Exploratory Data Analysis (EDA) of Brazilian e-commerce orders made at the **Olist Store**. The dataset covers 100,000+ orders placed between 2016 and 2018 across multiple marketplaces in Brazil. By unifying multiple related CSV datasets, this analysis provides business insights into sales revenue performance, product category trends, customer purchasing behavior, payment preferences, review ratings, delivery times, and geographic patterns.
+## 📌 About the Project
 
-## Project Objective
-- Analyze sales performance and time-series growth trends over time.
-- Identify top-performing product categories by revenue and unit sales volume.
-- Evaluate customer retention rates and geographic order distribution across states.
-- Understand preferred payment methods and transaction distributions.
-- Assess customer review scores and overall customer satisfaction.
-- Analyze delivery duration and logistical fulfillment accuracy.
+This project is an **Exploratory Data Analysis (EDA)** of the **Olist Brazilian E-Commerce Public Dataset**.
 
-## Dataset
-The project utilizes the **Olist Brazilian E-Commerce Public Dataset** available on Kaggle.
+The dataset contains information about **100,000+ e-commerce orders** placed between 2016 and 2018. Multiple related datasets are combined to understand sales performance, customer behavior, product trends, payment preferences, reviews, delivery performance, and geographic distribution.
+
+The main focus of this project is:
+
+**Clean → Connect → Analyze → Visualize → Find Insights**
+
+---
+
+## 🎯 Project Objective
+
+The objective of this project is to explore the Brazilian e-commerce data and identify meaningful patterns and business insights.
+
+The analysis focuses on:
+
+* 📈 Sales performance and monthly trends
+* 🛍️ Top-performing product categories
+* 👥 Customer purchasing behavior
+* 💳 Payment method preferences
+* ⭐ Customer review ratings
+* 🚚 Delivery time and delivery delays
+* 🌎 Geographic distribution of customers and orders
+
+---
 
 ## 📊 Dataset
 
-This project uses the **Olist Brazilian E-Commerce Public Dataset**.
+This project uses the **Olist Brazilian E-Commerce Public Dataset** from Kaggle.
 
 The dataset contains information about:
 
@@ -32,69 +46,218 @@ The dataset contains information about:
 
 ### Dataset Source
 
-The dataset was obtained from Kaggle:
-
 **Olist Brazilian E-Commerce Public Dataset**
 
-https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+[Kaggle Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce?utm_source=chatgpt.com)
 
+---
 
-## Datasets Used
-- `olist_orders_dataset.csv`: Main order timeline and status details.
-- `olist_customers_dataset.csv`: Customer locations (cities and states).
-- `olist_order_items_dataset.csv`: Product item prices, freight values, and seller links.
-- `olist_products_dataset.csv`: Product categories, dimensions, and weights.
-- `olist_sellers_dataset.csv`: Seller locations across Brazil.
-- `olist_order_payments_dataset.csv`: Payment types, values, and installment counts.
-- `olist_order_reviews_dataset.csv`: Customer review scores and feedback text.
-- `product_category_name_translation.csv`: English translations for product categories.
+## 📁 Datasets Used
 
-## Key Analysis
-The analysis is structured into 14 comprehensive sections inside the Jupyter Notebook:
+| Dataset                                 | Description                                                          |
+| --------------------------------------- | -------------------------------------------------------------------- |
+| `olist_orders_dataset.csv`              | Order status, purchase dates, delivery dates, and estimated delivery |
+| `olist_customers_dataset.csv`           | Customer IDs and geographic information                              |
+| `olist_order_items_dataset.csv`         | Product prices, freight values, and seller information               |
+| `olist_products_dataset.csv`            | Product categories and product characteristics                       |
+| `olist_sellers_dataset.csv`             | Seller locations and information                                     |
+| `olist_order_payments_dataset.csv`      | Payment methods, values, and installments                            |
+| `olist_order_reviews_dataset.csv`       | Customer review scores and feedback                                  |
+| `product_category_name_translation.csv` | Portuguese-to-English product category translation                   |
+
+---
+
+## 🔗 Data Integration
+
+The project combines multiple related datasets using common identifiers such as:
+
+```text
+Customers
+    ↓ customer_id
+Orders
+    ↓ order_id
+Order Items
+    ↓ product_id
+Products
+```
+
+Additional information is connected through:
+
+```text
+Orders → Payments
+Orders → Reviews
+Order Items → Sellers
+Products → Category Translation
+```
+
+This creates a combined dataset that allows different aspects of the e-commerce platform to be analyzed together.
+
+---
+
+## 🧹 Data Cleaning & Preparation
+
+The project includes:
+
+* Handling missing values
+* Converting date columns into datetime format
+* Checking duplicate records
+* Cleaning categorical data
+* Handling missing product information
+* Translating product categories into English
+* Combining multiple datasets using joins
+* Creating useful analytical features
+
+---
+
+## ⚙️ Feature Engineering
+
+Additional features were created to support the analysis, including:
+
+* Total order value
+* Order year
+* Order month
+* Year-month
+* Delivery time in days
+* Delivery delay
+* Order day of the week
+* Customer order count
+* Product sales count
+
+These features help identify patterns that are not directly available in the original datasets.
+
+---
+
+## 📈 Key Analysis
+
+The Jupyter Notebook is organized into the following sections:
+
 1. Project Introduction
 2. Import Libraries
 3. Dataset Understanding
 4. Data Cleaning
 5. Data Integration
 6. Feature Engineering
-7. Sales Analysis (Monthly revenue and order volume trends)
-8. Product Analysis (Top categories by revenue & unit volume)
-9. Customer Analysis (Repeat vs one-time customers & state breakdown)
-10. Payment Analysis (Payment method distribution)
-11. Review Analysis (Review score distribution)
-12. Delivery Analysis (Delivery time distribution & delay analysis)
-13. Geographic Analysis (Statewise customer distribution)
+7. Sales Analysis
+8. Product Analysis
+9. Customer Analysis
+10. Payment Analysis
+11. Review Analysis
+12. Delivery Analysis
+13. Geographic Analysis
 14. Final Insights
 
-## Technologies Used
-- **Python 3**
-- **Pandas**: Data loading, cleaning, manipulation, and merging
-- **Matplotlib**: Clean and custom data visualizations
-- **Seaborn**: Statistical graphics and plot formatting
+---
 
-## Project Structure
+## 📊 Analysis Areas
+
+### 💰 Sales Analysis
+
+* Monthly sales trends
+* Order volume
+* Average order value
+* Sales performance over time
+
+### 🛍️ Product Analysis
+
+* Top product categories
+* Category-wise sales
+* Product sales performance
+
+### 👥 Customer Analysis
+
+* One-time vs repeat customers
+* Customer distribution by state
+* Purchasing behavior
+
+### 💳 Payment Analysis
+
+* Payment method distribution
+* Payment values
+* Installment patterns
+
+### ⭐ Review Analysis
+
+* Review score distribution
+* Customer satisfaction patterns
+
+### 🚚 Delivery Analysis
+
+* Delivery duration
+* Delivery delays
+* Estimated vs actual delivery performance
+
+### 🌎 Geographic Analysis
+
+* Customer distribution by state
+* Geographic concentration of orders
+
+---
+
+## 💡 Key Insights
+
+Some of the major insights identified during the analysis include:
+
+* 📈 **Sales Growth:** Sales showed strong growth during the analyzed period, with a notable increase in November 2017.
+* 🛍️ **Top Categories:** Categories such as `health_beauty`, `watches_gifts`, and `bed_bath_table` generated high sales revenue.
+* 👥 **Customer Behavior:** The majority of customers placed only one order, showing an opportunity to study repeat purchasing behavior.
+* 💳 **Payment Preference:** Credit cards were the most frequently used payment method.
+* ⭐ **Customer Reviews:** 5-star reviews represented a large portion of the overall review scores.
+* 🚚 **Delivery Performance:** Delivery time and estimated delivery dates were analyzed to understand fulfillment performance.
+* 🌎 **Geographic Concentration:** A significant portion of orders came from states in Southeastern Brazil, particularly São Paulo.
+
+---
+
+## 🛠️ Technologies Used
+
+* **Python 3**
+* **Pandas** — Data loading, cleaning, transformation, and analysis
+* **Matplotlib** — Data visualization
+* **Seaborn** — Statistical visualization and plot formatting
+* **Jupyter Notebook** — Analysis and documentation
+
+---
+
+## 📂 Project Structure
+
 ```text
 E-Commerce Sales & Customer Analysis/
 │
 ├── data/
-│   ├── raw/                  # Original Olist CSV files
-│   └── processed/            # Cleaned merged dataset (ecommerce_sales_analysis.csv)
+│   ├── raw/
+│   └── processed/
 │
 ├── E-Commerce Sales & Customer Analysis.ipynb
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
-## Key Insights
-- **Sales Growth & Black Friday Peak**: Sales revenue grew steadily throughout 2017, reaching a sharp record peak in November 2017 ($1M+ revenue) driven by Black Friday.
-- **Top Product Categories**: `health_beauty`, `watches_gifts`, and `bed_bath_table` generated the highest sales revenue, while `bed_bath_table` led in overall unit volume sold.
-- **Customer Retention Opportunity**: Over 97% of customers are one-time buyers, highlighting repeat customer retention as a major strategic opportunity.
-- **Credit Card Popularity**: Credit card is the primary payment method for over 70% of transactions, followed by Boleto (bank slip).
-- **High Review Ratings**: Over 57% of reviews are 5-star ratings, demonstrating strong overall customer satisfaction.
-- **Reliable Fulfillment**: The median delivery time is 10 days, and over 90% of orders were delivered on or before the estimated delivery date.
-- **Geographic Concentration**: Customer demand is concentrated in Southeastern Brazil, with São Paulo (SP) accounting for over 40% of total platform orders.
+> The dataset files are kept locally and are excluded from the GitHub repository using `.gitignore`.
 
-## Author
+---
 
-Aditya Runwal
+## 🚀 What I Learned
+
+Through this project, I practiced:
+
+* Working with multiple related datasets
+* Data cleaning using Pandas
+* Handling missing values
+* Merging datasets using common keys
+* Feature engineering
+* Exploratory data analysis
+* Data visualization
+* Extracting meaningful insights from real-world data
+* Organizing an end-to-end EDA project
+
+---
+
+## 👨‍💻 Author
+
+**Aditya Runwal**
 
 AI/ML Enthusiast
+Exploring **Machine Learning, Deep Learning, and Generative AI**
+
+---
+
+⭐ **If you find this project useful, feel free to explore the notebook and analysis.**
